@@ -2616,9 +2616,10 @@ function onOpenModal(e) {
 
 function onLoadMore() {
   fetchCards().then(setTimeout(function () {
-    window.scrollBy({
-      top: document.documentElement.clientHeight - 100,
-      behavior: 'smooth'
+    window.scrollTo({
+      top: document.documentElement.offsetHeight,
+      behavior: 'smooth',
+      block: 'end'
     });
   }, 1000)).catch(function (err) {
     return console.log(err);
@@ -2652,7 +2653,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55481" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56908" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
