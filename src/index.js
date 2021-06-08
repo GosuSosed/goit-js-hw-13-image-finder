@@ -80,9 +80,10 @@ function onLoadMore() {
   fetchCards()
     .then(
       setTimeout(() => {
-        window.scrollBy({
-          top: document.documentElement.clientHeight - 100,
+        window.scrollTo({
+          top: document.documentElement.offsetHeight,
           behavior: 'smooth',
+          block: 'end',
         });
       }, 1000),
     )
